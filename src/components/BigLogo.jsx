@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import biglogo from "../assets/logo.png"
 
 export default function BigLogo() {
   return (
     <>
-      <Logo src="src\assets\logo.png" alt="logo"/>
+      <Logo src={biglogo} alt="logo"/>
       <Title>Trackit</Title>
     </>
   )
