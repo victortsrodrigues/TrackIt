@@ -91,6 +91,9 @@ export default function HabitsPage() {
       })
   }
 
+  // Verifica se o formulário é válido (nome preenchido e pelo menos um dia selecionado)
+  const isFormValid = nameNewHabit.trim() !== "" && selectedDays.length > 0;
+
   const days = ["D", "S", "T", "Q", "Q", "S", "S"];
 
   return (
@@ -119,7 +122,13 @@ export default function HabitsPage() {
               </Days>
               <Buttons>
                 <CancelButton onClick={cancelNewHabit} disabled={loading}>Cancelar</CancelButton>
-                <SaveButton onClick={sendNewHabit} disabled={loading}>Salvar</SaveButton>
+                <SaveButton 
+                  onClick={sendNewHabit} 
+                  disabled={loading || !isFormValid}
+                  $isDisabled={!isFormValid}
+                >
+                  Salvar
+                </SaveButton>
               </Buttons>
             </NewHabit>
           }
@@ -260,7 +269,7 @@ const SaveButton = styled.button`
   width: 84px;
   height: 35px;
   border-radius: 4.64px;
-  background-color: #52B6FF;
+  background-color: ${(props) => props.$isDisabled ? "#CFCFCF" : "#52B6FF"};
   font-family: "Lexend Deca", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -271,6 +280,8 @@ const SaveButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: ${(props) => props.$isDisabled ? "0.7" : "1"};
+  cursor: ${(props) => props.$isDisabled ? "not-allowed" : "pointer"};
 `
 
 const CreatedHabit = styled.div`
