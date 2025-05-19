@@ -47,19 +47,21 @@ TrackIt offers:
 ---
 
 ## 🏗️ Project Structure
+```
 projeto-modulo11/
- ├── public/
- ├── src/
- │ ├── assets/ 
- │ ├── components/ 
- │ ├── contexts/ 
- │ ├── pages/ 
- │ ├── styles/ 
- │ ├── App.jsx 
- │ ├── TrackIt.jsx 
- │ └── main.jsx 
- ├── package.json 
- └── README.md
+├── public/
+├── src/
+│ ├── assets/ 
+│ ├── components/ 
+│ ├── contexts/ 
+│ ├── pages/ 
+│ ├── styles/ 
+│ ├── App.jsx 
+│ ├── TrackIt.jsx 
+│ └── main.jsx 
+├── package.json 
+└── README.md
+```
 
 ---
 
